@@ -1,0 +1,32 @@
+# Auto-label PRs based on changed files
+
+frontend:
+  - "src/**/*"
+  - "public/**/*"
+
+components:
+  - "src/components/**/*"
+
+styles:
+  - "**/*.css"
+  - "**/*.scss"
+
+composables:
+  - "src/composables/**/*"
+
+config:
+  - "*.json"
+  - "*.js"
+  - "*.ts"
+  - "vite.config.*"
+  - "tsconfig.*"
+
+docs:
+  - "**/*.md"
+
+security:
+  - "src/composables/useGeoCheck.ts"
+  - ".github/SECURITY.md"
+
+ci:
+  - ".github/workflows/*"
