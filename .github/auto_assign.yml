@@ -1,0 +1,7 @@
+addReviewers: true
+addAssignees: false
+
+reviewers:
+  - tugtug12121
+
+numberOfReviewers: 1
