@@ -1,0 +1,53 @@
+version: 2
+
+updates:
+  # ---------------------------------------------------------
+  # 1. NPM (Vue 3.5, Vite, GSAP, TypeScript, etc.)
+  # ---------------------------------------------------------
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "npm"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    groups:
+      vue-stack:
+        patterns:
+          - "vue*"
+          - "@vue/*"
+          - "vite*"
+          - "@vitejs/*"
+      typescript:
+        patterns:
+          - "typescript"
+          - "@types/*"
+      animations:
+        patterns:
+          - "gsap"
+      tooling:
+        patterns:
+          - "eslint*"
+          - "prettier*"
+          - "rollup*"
+          - "vite-plugin*"
+
+  # ---------------------------------------------------------
+  # 2. GitHub Actions
+  # ---------------------------------------------------------
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "ci"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
